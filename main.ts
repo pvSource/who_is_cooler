@@ -1,4 +1,4 @@
-import GameField from './DataLayer/GameField';
+import game_field from './DataLayer/GameField';
 
-GameField.getInstance().createField();
-GameField.getInstance().printRealField();
+game_field.createField();
+game_field.printRealField();

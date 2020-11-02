@@ -2,18 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class GameField {
     constructor() {
-        this.field = null;
-        if (GameField.instance != null) {
-            throw new Error('Attempt to create second GameField object');
-        }
         this.createField();
         console.log("Поле создано");
-    }
-    static getInstance() {
-        if (GameField.instance == null) {
-            GameField.instance = new GameField();
-        }
-        return GameField.instance;
     }
     createField() {
         for (let i = 0; i < 10; i++) {
@@ -38,6 +28,6 @@ class GameField {
         console.log("Поле выведено в реале (отладка)");
     }
 }
-exports.default = GameField;
-GameField.instance = null;
+var game_field = new GameField();
+exports.default = game_field;
 //# sourceMappingURL=GameField.js.map

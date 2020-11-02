@@ -1,23 +1,11 @@
 import CellContent from './CellContent';
 
-export default class GameField {
-    static instance: GameField = null;
+class GameField {
     public field: Array<Array<CellContent>>;
 
     constructor() {
-        if (GameField.instance != null) {
-            throw new Error('Attempt to create second GameField object');
-        }
-
         this.createField();
         console.log("Поле создано")
-    }
-
-    static getInstance(): GameField {
-        if (GameField.instance == null) {
-            GameField.instance = new GameField();
-        }
-        return GameField.instance;
     }
 
     createField(): void {
@@ -42,8 +30,7 @@ export default class GameField {
         }
         console.log("Поле выведено в реале (отладка)"); //отладка
     }
-
-
-
-
 }
+
+var game_field: GameField = new GameField();
+export default game_field;
